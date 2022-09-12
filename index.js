@@ -5,12 +5,8 @@ const { pacientRoutes, paymentRoutes } = require('./routes');
 
 const app = express();
 
-const corsOptions = {
-  origin: 'http://localhost:3000',
-  methods: ['POST', 'GET'],
-};
 
-app.use(cors(corsOptions));
+app.use(cors({}));
 app.use(express.json());
 app.use('/pacients', pacientRoutes);
 app.use('/payments', paymentRoutes);
